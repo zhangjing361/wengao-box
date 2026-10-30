@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="粘贴 Markdown 或 AI 回答，在浏览器本地转成可编辑的 Word 文档。中文排版，不用登录。">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>文稿盒 · Markdown 转 Word</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233c5adb'/%3E%3Cpath d='M19 16h26v32H19z' fill='white'/%3E%3Cpath d='M25 26h14M25 33h14M25 40h9' stroke='%233c5adb' stroke-width='3'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="./" aria-label="文稿盒首页"><span class="brand-mark" aria-hidden="true">文</span>文稿盒<span class="version">BETA</span></a><span class="local-badge"><i></i>正文只在你的浏览器中处理</span></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">MARKDOWN → WORD</p><h1>把文字，变成一份好文档。</h1><p class="subtitle">粘贴 AI 回答或 Markdown，保留标题、列表和表格。下载后，还能接着改。</p></div><div class="intro-aside"><span>不用登录</span><span>不需要 API Key</span><span>免费 · 本地转换</span></div></section>
+    <section class="workspace" aria-label="文稿编辑工作台">
+      <div class="editor-panel panel">
+        <div class="panel-header"><h2><span class="step">01</span>放入你的文字</h2><button id="sample" class="button-secondary">载入示例</button></div>
+        <label class="sr-only" for="editor">文稿内容</label>
+        <textarea id="editor" spellcheck="false" placeholder="# 在这里写下标题&#10;&#10;粘贴 Markdown 格式的文字，或者点击右上角「载入示例」。&#10;&#10;## 试试这些格式&#10;- 用列表整理重点&#10;- 用 **粗体** 标记关键内容&#10;&#10;你的文稿只在当前浏览器中处理，不会上传。"></textarea>
+        <div class="editor-footer"><span id="count">0 / 100,000 字符</span><span>支持 Markdown</span></div>
+        <div class="syntax-tip"><strong>小提示</strong> 从 AI 对话中复制 Markdown 原文，通常比复制富文本更容易保留格式。</div>
+      </div>
+      <div class="preview-panel panel">
+        <div class="panel-header"><h2><span class="step">02</span>看看排版效果</h2><span class="paper-label">A4 · 可编辑文字</span></div>
+        <div class="preview-stage"><article id="preview" class="paper" data-template="normal"><div class="empty-state"><span class="empty-icon" aria-hidden="true">Aa</span><h3>你的下一份文档，从这里开始</h3><p>在左侧粘贴文字，或载入示例。<br>这里会显示排版预览。</p><span class="empty-rule"></span><span class="empty-rule short"></span><span class="empty-rule"></span></div></article></div>
+        <p class="preview-note">内容与样式预览，非 Word 精确分页。实际分页取决于字体与打开软件。</p>
+      </div>
+    </section>
+    <section class="export-bar" aria-label="导出设置"><div class="export-title"><span class="step">03</span><strong>导出你的文档</strong></div><div class="field"><label for="template">排版模板</label><select id="template"><option value="normal">普通文档</option><option value="report">课程报告</option></select></div><div class="field filename-field"><label for="filename">文件名称</label><div class="filename-wrap"><input id="filename" value="我的文稿" maxlength="120"><span>.docx</span></div></div><button id="export" class="button-primary" disabled><span aria-hidden="true">↓</span> 下载 Word</button></section>
+    <div id="status" class="status" role="status" aria-live="polite">准备好了。先载入示例，试着导出第一份 Word。</div>
+    <div id="warnings" class="warnings" hidden></div>
+    <section class="notes"><div><h3>保留你需要的格式</h3><p>六级标题、粗斜体、三级列表、表格、引用和代码。Word 里的内容仍可选择与编辑。</p></div><div><h3>有边界，也说清楚</h3><p>图片仅保留说明，链接转为文字；公式不转成 Word 公式。HTML 不执行。课程报告不是学校专用模板。</p></div><div><h3>不上传，也不自动保存</h3><p>正文只留在当前页面内存中。刷新可能丢失，请及时导出。页面本身仍需正常加载静态资源。</p></div></section>
+  </main>
+  <footer><span>文稿盒 WENGAO BOX</span><span>让整理文档，少一点重复劳动。</span></footer>
+  <script type="module" src="/src/main.js"></script>
+</body></html>
